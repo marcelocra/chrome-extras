@@ -1,36 +1,40 @@
 {
   "manifest_version": 2,
-  "name": "Send selection to Google Maps",
-  "description": "This extension opens a selection directly on Google Maps",
+  "name": "Chrome Extras",
+  "description": "Provides extra functionality that should be available in Chrome",
   "version": "0.1",
   "background": {
     "scripts": [
-      "background.js",
-      "utils.js",
-      "events.js"
+      "resources/public/js/compiled/background/background.js"
     ]
   },
-  "browser_action": {
-    "default_icon": "send-to-maps-squared.png"
-  },
   "permissions": [
-    "alarms",
-    "storage",
-    "contextMenus",
-    "activeTab",
     "commands",
+    "contextMenus",
+    "storage",
     "tabs"
   ],
+  "omnibox": {
+    "keyword": "x"
+  },
+  "icons": {
+    "16": "resources/public/images/open-in-google-maps-16.png",
+    "48": "resources/public/images/chrome-extension-48.png",
+    "128": "resources/public/images/chrome-extension-128.png"
+  },
   "commands": {
-    "move-tab-to-window": {
+    "toggle-tab-to-window": {
       "suggested_key": {
         "default": "Alt+Shift+D"
       },
-      "description": "Move current tab to its own window"
+      "description": "Move current tab to its own window and back"
+    },
+    "print-storage": {
+      "suggested_key": {
+        "default": "Alt+Shift+P"
+      },
+      "description": "Debug helper to print chrome.storage items"
     }
   },
-  "options_page": "options.html",
-  "icons": {
-    "16": "send-to-maps-16.png"
-  }
+  "options_page": "resources/public/options.html"
 }
