@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
-  "name": "Chrome Extension with ClojureScript",
-  "description": "Does nothing for now. Just testing ClojureScript",
+  "name": "Chrome Extras",
+  "description": "Provides extra functionality that should be available in Chrome",
   "version": "0.1",
   "background": {
     "scripts": [
-      "out/background/background.js"
+      "resources/public/js/compiled/background/background.js"
     ]
   },
   "permissions": [
@@ -15,12 +15,12 @@
     "tabs"
   ],
   "omnibox": {
-    "keyword": "my"
+    "keyword": "x"
   },
   "icons": {
-    "16": "images/open-in-google-maps-16.png",
-    "48": "images/chrome-extension-48.png",
-    "128": "images/chrome-extension-128.png"
+    "16": "resources/public/images/open-in-google-maps-16.png",
+    "48": "resources/public/images/chrome-extension-48.png",
+    "128": "resources/public/images/chrome-extension-128.png"
   },
   "commands": {
     "toggle-tab-to-window": {
@@ -36,5 +36,5 @@
       "description": "Debug helper to print chrome.storage items"
     }
   },
-  "options_page": "options.html"
+  "options_page": "resources/public/options.html"
 }
